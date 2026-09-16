@@ -2167,6 +2167,8 @@
 
                 promocao: true,
 
+                destaque: true,
+
                 disponivel: true
             },
 
@@ -2191,6 +2193,8 @@
                 imagem: "imagens/gravatabasic02_6cm.jpg",
 
                 promocao: true,
+
+                destaque: true,
 
                 disponivel: true
             },
@@ -2217,6 +2221,8 @@
 
                 promocao: true,
 
+                destaque: false,
+
                 disponivel: true
             },
 
@@ -2241,6 +2247,8 @@
                 imagem: "imagens/gravatabasic04_6cm.jpg",
 
                 promocao: true,
+
+                destaque: false,
 
                 disponivel: true
             },
@@ -2267,6 +2275,8 @@
 
                 promocao: true,
 
+                destaque: false,
+
                 disponivel: true
             },
 
@@ -2291,6 +2301,8 @@
                 imagem: "imagens/gravatabasic06_6cm.jpg",
 
                 promocao: true,
+
+                destaque: false,
 
                 disponivel: true
             },
@@ -2317,6 +2329,8 @@
 
                 promocao: true,
 
+                destaque: false,
+
                 disponivel: true
             },
 
@@ -2341,6 +2355,8 @@
                 imagem: "imagens/gravatabasic08_6cm.jpg",
 
                 promocao: true,
+
+                destaque: false,
 
                 disponivel: true
             },
@@ -3079,6 +3095,8 @@
 
                 promocao: false,
 
+                destaque: true,
+
                 disponivel: true
             },
             
@@ -3102,6 +3120,8 @@
                 imagem: "imagens/cintopremium02.jpg",
 
                 promocao: false,
+
+                destaque: true,
 
                 disponivel: true
             },
@@ -3571,7 +3591,7 @@
         function renderFilters() {
 
             const categories = [
-                "Todos",
+                "Destaques",
 
                 ...new Set(
                     products
@@ -3804,8 +3824,8 @@
 
 
                     const matchesCategory =
-                        currentCategory === "Todos"
-                            ? true
+                        currentCategory === "Destaques"
+                            ? product.destaque === true
                             : currentCategory === "Promoções"
                                 ? product.promocao
                                 : product.categoria === currentCategory;
@@ -4144,6 +4164,8 @@
         /* =========================================================
            INICIALIZAÇÃO
         ========================================================== */
+
+        currentCategory = "Destaques";
 
         renderFilters();
 
