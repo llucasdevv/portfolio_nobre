@@ -3457,9 +3457,14 @@
                 : "Adicionar ao carrinho";
 
             modalBuy.onclick = () => {
+                const antes = getCartQuantity(product.id);
+
                 addToCart(product);
-                if (getProductStock(product) > 0) {
-                    closeProductModal();
+
+               const depois = getCartQuantity(product.id);
+
+               if (depois > antes) {
+                   closeProductModal();
                 }
             };
 
