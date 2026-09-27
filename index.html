@@ -2893,17 +2893,7 @@
         }
 
         function getStockLabel(product) {
-            const stock = getProductStock(product);
-
-            if (stock <= 0) {
-                return `<div class="stock-status out-of-stock">Sem estoque</div>`;
-            }
-
-            if (stock <= 3) {
-                return `<div class="stock-status low-stock">Últimas ${stock} unidade${stock === 1 ? "" : "s"}</div>`;
-            }
-
-            return `<div class="stock-status in-stock">${stock} unidades disponíveis</div>`;
+            return "";
         }
 
         function addToCart(product) {
